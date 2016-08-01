@@ -74,10 +74,10 @@ public class SoNoActivity extends Activity {
 		 * Tao cac quickAction
 		 */		
 		mQuickAction 	= new QuickAction(this);
-		ActionItem addItem 		= new ActionItem(ID_Sua, "Sửa", getResources().getDrawable(R.drawable.ic_quickaction_sua));
-		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Xóa", getResources().getDrawable(R.drawable.ic_quickaction_remove));
+		ActionItem addItem 		= new ActionItem(ID_Sua, "Edit", getResources().getDrawable(R.drawable.ic_quickaction_sua));
+		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Delete", getResources().getDrawable(R.drawable.ic_quickaction_remove));
 		//quickAction cho VayNo
-		ActionItem xem	= new ActionItem(ID_Xem, "Xem", getResources().getDrawable(R.drawable.ic_quickaction_datra));
+		ActionItem xem	= new ActionItem(ID_Xem, "Show", getResources().getDrawable(R.drawable.ic_quickaction_datra));
 		mQuickAction.addActionItem(xem);
 		mQuickAction.addActionItem(addItem);
 		mQuickAction.addActionItem(acceptItem);

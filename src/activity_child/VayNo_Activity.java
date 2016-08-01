@@ -235,12 +235,12 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 			setTextTvNguoiVayNo();
 
 			if (vay_or_no.equals("no")) {
-				setTitle("Sửa khoản nợ");
-				tvTitel_vayno.setText("Sửa khoản nợ");
+				setTitle("Edit Debts");
+				tvTitel_vayno.setText("Edit Debts");
 
 			} else {
-				setTitle("Sửa khoản vay");
-				tvTitel_vayno.setText("Sửa khoản vay");
+				setTitle("Edit Loan");
+				tvTitel_vayno.setText("Edit Loan");
 			}
 
 			ten_giao_dich.setText(Update_tc.getTen_giao_dich());

@@ -11,12 +11,14 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.moneylove.R;
 
 public class CustomizeDialog extends Dialog implements OnClickListener {
 
-	private Button btnThu, btnNo, btnChi, btnChoVay, btnHuy;
+	private Button btnThu, btnNo, btnChi, btnChoVay;
+	private ImageButton btnHuy;
 	private Activity activity2;
 
 	public CustomizeDialog(Activity activity) {
@@ -43,7 +45,7 @@ public class CustomizeDialog extends Dialog implements OnClickListener {
 		btnChoVay = (Button) findViewById(R.id.btnChoVay_giaodich);
 		btnChoVay.setOnClickListener(this);
 
-		btnHuy = (Button) findViewById(R.id.btnHuyBo_giaodich);
+		btnHuy = (ImageButton) findViewById(R.id.btnHuyBo_giaodich);
 		btnHuy.setOnClickListener(this);
 	}
 

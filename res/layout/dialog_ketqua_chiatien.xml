@@ -18,7 +18,7 @@
 		    android:layout_gravity="center_vertical"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:text="Số tiền tip"
+		    android:text="Amount tip"
 		    android:layout_weight="1"
 		    android:textSize="15dp"
 	        />  
@@ -46,7 +46,7 @@
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
-		    android:text="Tổng tiền"
+		    android:text="Total"
 		    android:textSize="15dp"
 	        />  
         <TextView 
@@ -73,7 +73,7 @@
 		    android:layout_width="match_parent"
 		    android:layout_weight="1"
 		    android:layout_height="wrap_content"
-		    android:text="Số tiền mỗi người"
+		    android:text="Amount per person"
 		    android:textSize="15dp"
 	        />  
         <TextView 
@@ -95,10 +95,10 @@
         android:gravity="center"
         android:layout_marginTop="15dp"
         android:layout_gravity="center"
-        android:text="Đóng"
+        android:text="Close"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold"
 		/>
 </LinearLayout>

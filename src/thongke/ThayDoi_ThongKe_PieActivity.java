@@ -121,14 +121,14 @@ public class ThayDoi_ThongKe_PieActivity  extends Activity implements OnClickLis
 		case R.id.editTu_Ngay: {
 			ktDateVay_or_Tra = false;
 			AlertDialog dialog = makeAndShowDialogBox();
-			dialog.setTitle("Từ Ngày");
+			dialog.setTitle("From(Date)");
 			dialog.show();
 			break;
 		}
 		case R.id.editToi_Ngay: {
 			ktDateVay_or_Tra = true;
 			AlertDialog dialog = makeAndShowDialogBox();
-			dialog.setTitle("Tới Ngày");
+			dialog.setTitle("To(Date)");
 			dialog.show();
 			break;
 		}
@@ -153,7 +153,7 @@ public class ThayDoi_ThongKe_PieActivity  extends Activity implements OnClickLis
 		final AlertDialog dialogbox = new AlertDialog.Builder(this)
 		.setView(yourCustomView)
 		//.setTitle("")
-		.setNegativeButton("Hủy Bỏ",new DialogInterface.OnClickListener() {
+		.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
 

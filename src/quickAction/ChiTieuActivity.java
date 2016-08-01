@@ -211,13 +211,13 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 		 * Tao cac quickAction
 		 */		
 		//quickAction cho Thu,Chi
-		ActionItem addItem 		= new ActionItem(ID_Sua, "Sửa", getResources().getDrawable(R.drawable.ic_quickaction_sua));
-		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Xóa", getResources().getDrawable(R.drawable.ic_quickaction_remove));
+		ActionItem addItem 		= new ActionItem(ID_Sua, "Edit", getResources().getDrawable(R.drawable.ic_quickaction_sua));
+		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Delete", getResources().getDrawable(R.drawable.ic_quickaction_remove));
 		//quickAction cho VayNo
-		ActionItem addVNdatra	= new ActionItem(ID_DaTra, "Đã Trả", getResources().getDrawable(R.drawable.ic_quickaction_datra));
-		ActionItem suaVNquakhu 	= new ActionItem(ID_QuaKhu, "Quá Khứ", getResources().getDrawable(R.drawable.ic_quickaction_time));
+		ActionItem addVNdatra	= new ActionItem(ID_DaTra, "Paid", getResources().getDrawable(R.drawable.ic_quickaction_datra));
+		ActionItem suaVNquakhu 	= new ActionItem(ID_QuaKhu, "Past", getResources().getDrawable(R.drawable.ic_quickaction_time));
 
-		ActionItem Call = new ActionItem(ID_Call, "Gọi", getResources().getDrawable(R.drawable.ic_quickaction_call));
+		ActionItem Call = new ActionItem(ID_Call, "Call", getResources().getDrawable(R.drawable.ic_quickaction_call));
 		/*
 		 * Bien dung cho hien dialog QuickAction
 		 * @mQuickAction bat buoc phai dc khoi tao

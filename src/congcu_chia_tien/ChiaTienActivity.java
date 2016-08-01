@@ -96,9 +96,9 @@ public class ChiaTienActivity extends Activity{
 				if(edSoTien.getText().toString().length()==0||Integer.valueOf(edSoTien.getText().toString()) < 1)
 				{//chi kiem tra so nguoi va so tien ti le tiep bo qua
 					AlertDialog buider1 = new AlertDialog.Builder(ChiaTienActivity.this).create();
-					buider1.setTitle("Có lỗi xảy ra!");
+					buider1.setTitle("An error occurred!");
 					buider1.setIcon(R.drawable.warning);
-					buider1.setMessage("Số tiền phải lớn hơn 0");
+					buider1.setMessage("The amount must be greater than 0");
 					buider1.setButton("OK", new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -110,9 +110,9 @@ public class ChiaTienActivity extends Activity{
 					if(edSoNguoi.getText().toString().length()==0||Integer.valueOf(edSoNguoi.getText().toString()) < 1)
 					{
 						AlertDialog buider2 = new AlertDialog.Builder(ChiaTienActivity.this).create();
-						buider2.setTitle("Có lỗi xảy ra!");
+						buider2.setTitle("An error occurred!");
 						buider2.setIcon(R.drawable.warning);
-						buider2.setMessage("Số người phải lớn hơn 0");
+						buider2.setMessage("People must be greater than 0");
 						buider2.setButton("OK", new DialogInterface.OnClickListener() {
 
 							@Override
@@ -144,7 +144,7 @@ public class ChiaTienActivity extends Activity{
 		case CUSTOM_DIALOG_CHIA_TIEN_OK:
 			dialog = new Dialog(this);
 			dialog.setContentView(R.layout.dialog_ketqua_chiatien);
-			dialog.setTitle("Kết Quả");
+			dialog.setTitle("Result");
 			//			dialog.setIcon(R.drawable.money_pig);
 			final EditText edSoTien = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
 			final EditText edTyLeTip = (EditText)ChiaTienActivity.this.findViewById(R.id.edTyLeTip);

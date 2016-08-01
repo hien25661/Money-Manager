@@ -202,7 +202,7 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 
 			thu_or_chi = Update_tc.getMa_id(); // gan thu or chi vao bien
 			autoCompleteText(thu_or_chi);
-			tvTitel_thuchi.setText("Sửa khoản "+thu_or_chi);
+			tvTitel_thuchi.setText("Edit ");
 			ten_giao_dich.setText(Update_tc.getTen_giao_dich());
 
 			so_tien.setText(new Simple_method().KiemtraSoFloat_Int(Update_tc.getSo_tien()));

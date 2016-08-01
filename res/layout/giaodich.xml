@@ -2,18 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@color/mauDen_No"
-    android:gravity="center">
+    android:background="@color/GreenChuDe"
+    android:gravity="center"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
         android:text="@string/themgiaodich"
-        android:textColor="@color/mauTrang_Chu"
+        android:textColor="@android:color/black"
         android:textSize="20dp"
-        android:gravity="center_horizontal" />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -31,6 +33,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:drawableLeft="@drawable/earn"
                 android:text="Earn" />
 
             <Button
@@ -39,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="2"
+                android:drawableLeft="@drawable/spend"
                 android:text="Spend" />
         </LinearLayout>
 
@@ -53,6 +57,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:drawableLeft="@drawable/loan"
                 android:text="Loan" />
 
             <Button
@@ -60,14 +65,15 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:drawableLeft="@drawable/thief"
                 android:text="Owe" />
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnHuyBo_giaodich"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel" />
+        android:src="@drawable/cancel" />
 
 </LinearLayout>

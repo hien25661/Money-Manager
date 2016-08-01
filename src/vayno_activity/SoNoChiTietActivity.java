@@ -128,11 +128,11 @@ public class SoNoChiTietActivity extends Activity{
 		 * Tao cac quickAction
 		 */		
 		mQuickAction 	= new QuickAction(this);
-		ActionItem addItem 		= new ActionItem(ID_Sua, "Sửa", getResources().getDrawable(R.drawable.ic_quickaction_sua));
-		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Xóa", getResources().getDrawable(R.drawable.ic_quickaction_remove));
+		ActionItem addItem 		= new ActionItem(ID_Sua, "Edit", getResources().getDrawable(R.drawable.ic_quickaction_sua));
+		ActionItem acceptItem 	= new ActionItem(ID_Xoa, "Delete", getResources().getDrawable(R.drawable.ic_quickaction_remove));
 		//quickAction cho VayNo
-		ActionItem datra	= new ActionItem(ID_DaTra, "Đã Trả", getResources().getDrawable(R.drawable.ic_quickaction_datra));
-		ActionItem quakhu 	= new ActionItem(ID_QuaKhu, "Quá Khứ", getResources().getDrawable(R.drawable.ic_quickaction_time));
+		ActionItem datra	= new ActionItem(ID_DaTra, "Paid", getResources().getDrawable(R.drawable.ic_quickaction_datra));
+		ActionItem quakhu 	= new ActionItem(ID_QuaKhu, "Past", getResources().getDrawable(R.drawable.ic_quickaction_time));
 
 		mQuickAction.addActionItem(datra);
 		mQuickAction.addActionItem(quakhu);
@@ -283,9 +283,9 @@ public class SoNoChiTietActivity extends Activity{
 		});
 		AlertDialog myDialogBox = new AlertDialog.Builder(this)	
 		// set message, title, and icon
-		.setMessage("Số tiền đã trả ")
+		.setMessage("Amount paid ")
 		.setView(input)
-		.setPositiveButton("Đồng ý",
+		.setPositiveButton("Yes",
 				new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,
 					int whichButton) {
@@ -300,13 +300,13 @@ public class SoNoChiTietActivity extends Activity{
 						ChiTieuActivity.this.finish();*/
 					}
 				} catch (Exception e) {
-					Toast.makeText(getApplicationContext(),"Số tiền không được bỏ trống",1).show();
+					Toast.makeText(getApplicationContext(),"Money was not be empty",1).show();
 				}
 			}
 
 		})// setPositiveButton
 
-		.setNegativeButton("Không",
+		.setNegativeButton("No",
 				new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,
 					int whichButton) {
