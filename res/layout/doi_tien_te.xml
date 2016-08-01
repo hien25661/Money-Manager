@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabHost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true" >
+
+            <LinearLayout
+                android:id="@+id/tab1_tiente"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingBottom="40dip" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:background="@drawable/bgden"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Currency List"
+                    android:textColor="#ffffff"
+                    android:textSize="26dip"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_country_heading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#555555" >
+
+                    <TextView
+                        android:id="@+id/tv_11"
+                        android:layout_width="105dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Name"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dip"
+                        android:textStyle="normal|bold" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_12"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_11"
+                        android:gravity="center"
+                        android:text="Code"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dip"
+                        android:textStyle="normal|bold" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_13"
+                        android:layout_width="50dip"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_12"
+                        android:gravity="center"
+                        android:text="Buy"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dip"
+                        android:textStyle="normal|bold" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_14"
+                        android:layout_width="60dip"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_13"
+                        android:gravity="center"
+                        android:text="Trans"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dip"
+                        android:textStyle="normal|bold" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_15"
+                        android:layout_width="50dip"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_14"
+                        android:gravity="center"
+                        android:text="Sell"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15dip"
+                        android:textStyle="normal|bold" >
+                    </TextView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_country"
+                    android:layout_width="fill_parent"
+                    android:layout_height="385dp" >
+
+                    <ScrollView
+                        android:id="@+id/ScrollView11"
+                        android:layout_width="fill_parent"
+                        android:layout_height="385dp"
+                        android:background="@drawable/bg_darkblue"
+                        android:fillViewport="true" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="390dp" >
+
+                            <TableRow
+                                android:id="@+id/tableRow2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+
+                                <TextView
+                                    android:id="@+id/txtName"
+                                    android:layout_width="105dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dip"
+                                    android:layout_weight="0.1"
+                                    android:background="#252e34"
+                                    android:text="Name"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="#ffffff"
+                                    android:textSize="10dp" />
+
+                                <TextView
+                                    android:id="@+id/txtCode"
+                                    android:layout_width="50dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dip"
+                                    android:layout_weight="0.1"
+                                    android:background="#252e34"
+                                    android:gravity="center"
+                                    android:text="Code"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="#ffffff"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtBuy"
+                                    android:layout_width="50dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dip"
+                                    android:layout_weight="0.1"
+                                    android:text="Buy"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="#ffffff"
+                                    android:textSize="10dp" />
+
+                                <TextView
+                                    android:id="@+id/txtTransfer"
+                                    android:layout_width="60dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dip"
+                                    android:layout_weight="0.1"
+                                    android:text="Transfer"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="#ffffff"
+                                    android:textSize="10dp" />
+
+                                <TextView
+                                    android:id="@+id/txtSell"
+                                    android:layout_width="50dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dip"
+                                    android:layout_weight="0.1"
+                                    android:text="Sell"
+                                    android:textAppearance="?android:attr/textAppearanceMedium"
+                                    android:textColor="#ffffff"
+                                    android:textSize="10dp" />
+                            </TableRow>
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab2_tiente"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingBottom="40dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bgden"
+                    android:gravity="center" >
+	      
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="240dip"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Calculate Exchange"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/back_tiente"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="40dip"
+                        android:layout_height="30dp"
+                        android:background="@android:color/transparent"
+                        android:drawableBottom="@drawable/ref"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/ScrollView11"
+                    android:layout_width="fill_parent"
+                    android:layout_height="399dp"
+                    android:fillViewport="true" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="399dp"
+                        android:background="@drawable/bg_darkblue"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txtTien"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="20dip"
+                                android:paddingTop="10dip"
+                                android:text="Amount"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="10dip" >
+
+                            <EditText
+                                android:id="@+id/editTien"
+                                android:layout_width="272dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.64"
+                                android:background="@drawable/bgden_a"
+                                android:gravity="right"
+                                android:inputType="number"
+                                android:maxLength="15"
+                                android:paddingRight="10dp"
+                                android:paddingTop="5dp"
+                                android:textColor="#ffffff"
+                                android:textSize="30dp"
+                                android:typeface="serif" >
+
+                                <requestFocus />
+                            </EditText>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dip"
+                            android:paddingTop="10dip"
+                            android:text="From Currency"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dip" >
+
+                            <Spinner
+                                android:id="@+id/spinCurr"
+                                android:layout_width="269dp"
+                                android:layout_height="38dp"
+                                android:background="@drawable/nav_spinner"
+                                android:prompt="@string/select" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dip"
+                            android:paddingTop="10dip"
+                            android:text="To Currency"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="5dip" >
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="275dp"
+                                android:layout_height="48dp"
+                                android:background="@drawable/btn_b"
+                                android:drawableLeft="@drawable/vn"
+                                android:gravity="center"
+                                android:paddingLeft="20dip"
+                                android:text=" VND - Vietnam"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dip"
+                            android:paddingTop="10dip"
+                            android:text="Exchanged Total"
+                            android:textColor="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dip" >
+
+                            <TextView
+                                android:id="@+id/txtKq"
+                                android:layout_width="272dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="3.14"
+                                android:background="@drawable/kq"
+                                android:ems="10"
+                                android:gravity="right"
+                                android:inputType="numberDecimal"
+                                android:maxLength="14"
+                                android:paddingRight="10dp"
+                                android:paddingTop="5dp"
+                                android:textColor="#05c2f9"
+                                android:textSize="30dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="15dip" >
+
+                            <Button
+                                android:id="@+id/btnExchange"
+                                android:layout_width="272dp"
+                                android:layout_height="35dp"
+                                android:background="@drawable/btnok"
+                                android:text="Exchange" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+</TabHost>

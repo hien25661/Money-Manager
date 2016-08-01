@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mauTrang_Chu"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="9"
+        android:background="@color/GreenChuDe"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="5" >
+
+            <Button
+                android:id="@+id/Back_thaydoi"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/docam"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="@string/Back"
+                android:textColor="@color/mauTrang_Chu" />
+
+            <TextView
+                android:id="@+id/tvTitel_chart"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="Edit"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/mauTrang_Chu"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="6dp" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="5dp"
+                android:weightSum="5" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="From(Date)" />
+
+                <EditText
+                    android:id="@+id/editTu_Ngay"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="5dp"
+                android:weightSum="5" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="To(Date)" />
+
+                <EditText
+                    android:id="@+id/editToi_Ngay"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="none" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="5dp"
+                android:weightSum="5" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="Type" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="horizontal"
+                    android:weightSum="2" >
+
+                    <RadioButton
+                        android:id="@+id/radioChi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Spend"
+                        android:textColor="@color/mauDo_Chi" />
+
+                    <RadioButton
+                        android:id="@+id/radioThu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        
+                        android:onClick="onRadioButtonClicked"
+                        android:text="Earn"
+                        android:textColor="@color/mauXanh_Thu" />
+                </RadioGroup>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="normal">#1f1f1f</color>
+    <color name="pressed">#7b8181</color>
+    <color name="normal_pheptoan">#393939</color>
+    <color name="pressed_pheptoan">#7b8181</color>
+    <color name="normal_bang">#306060</color>
+    <color name="pressed_bang">#53a1a1</color>
+    <color name="mauXanh_Thu">#0099CC</color>
+    <color name="mauDo_Chi">#CC3300</color>
+    <color name="mauCam_Vay">#996633</color>
+    <color name="mauDen_No">#000000</color>
+    <color name="mauTrang_Chu">#FFFFFF</color>
+    <color name="camSection">#FF9933</color>
+    <color name="GreenNen">#336600</color>
+    <color name="GreenChuDe">#66CC33</color>
+    <color name="docam">#CC3333</color>
+    <color name="text_color_add">#008000</color>
+ <color name="donvi_tien">#000080</color>
+</resources>

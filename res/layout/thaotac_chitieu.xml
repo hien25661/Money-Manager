@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <HorizontalScrollView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingRight="5dp" >
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/ivCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/mauTrang_Chu"
+                    android:src="@drawable/pencil" />
+
+                <Button
+                    android:id="@+id/btnSua_thaotac"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/mauTrang_Chu"
+                    android:text="Edit"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+
+            </LinearLayout>     
+            <Button
+                android:id="@+id/btnXoa_thaotac"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Delete" />
+
+            <LinearLayout
+                android:id="@+id/llayoutVayNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnDaTra_giaodich"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Paid"
+                    android:textSize="12dp" />
+
+                <Button
+                    android:id="@+id/btnQuaKhu_giaodich"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Past"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnHuyBo_thaotac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout> <!--  -->

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="15" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_weight="14"
+        android:background="@color/GreenChuDe"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="4" >
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/Back_vayno"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/docam"
+                android:gravity="center"
+                android:text="@string/Back"
+                android:textColor="@color/mauTrang_Chu" />
+
+            <TextView
+                android:id="@+id/tvTitel_vayno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="Add Item"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/mauTrang_Chu"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAdd_vayno"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/docam"
+                android:gravity="center"
+                android:text="@string/luu"
+                android:textColor="@color/mauTrang_Chu" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:weightSum="5" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tvNguoiVayNo_vayno"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Borrower" />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCplTenNguoiVayNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:padding="5dp"
+                android:textColor="@color/mauDen_No" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Amount of money" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="4" >
+
+                <EditText
+                    android:id="@+id/edtSoTien_vayno"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="none"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:hint="x1 USD" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="Note" />
+
+            <EditText
+                android:id="@+id/edtGhiChu_vayno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/cothebotrong"
+                android:inputType="none"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:weightSum="4" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:hint="@string/cothebotrong"
+                android:text="Date of loan" />
+            <!-- ham de click show dialog -->
+
+            <EditText
+                android:id="@+id/tvDateVay_vayno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                android:padding="5dp" >
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+            android:weightSum="8" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="Pay day" />
+
+            <EditText
+                android:id="@+id/tvDateTra_vayno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

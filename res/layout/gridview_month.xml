@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4"
+        android:background="@color/GreenChuDe"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="5" >
+
+            <Button
+                android:id="@+id/btn_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/docam"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="Previous"
+                android:textColor="@color/mauTrang_Chu" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center"
+                  android:text="Date"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/mauTrang_Chu"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/docam"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="Next"
+                android:textColor="@color/mauTrang_Chu" />
+        </TableRow>
+    </TableLayout>
+
+    <GridView
+        
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="#DADADA"
+        android:columnWidth="1dp"
+        android:horizontalSpacing="1dp"
+        android:numColumns="7" />
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Money Management</string>
+    <string name="menu_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="cothebotrong">Could be empty</string>
+    <string name="phanloai">Uncategorized</string>
+    <string name="luu">Save</string>
+    <string name="Back">Back</string>
+    <string name="select">Choose a Country</string>
+    <string name="ngay">Day</string>
+    <string name="theloai">Type</string>
+    <string name="them">Add</string>
+    <string name="chonchedoTime">Select the time mode</string>
+    <string name="huybo">Cancel</string>
+    <string name="emptyData">Empty data</string>
+    <string name="themgiaodich">Add Transaction</string>
+   <string name="thaydoi">Change</string>
+    <!-- Dung cho dialog -->
+    <string name="dongy">OK</string>
+    <string name="luu_y">Note</string>
+    <string name="messageDialogRemve">Are you sure you want to delete</string>
+    <string name="datra">Paid</string>
+    <string name="dong">Close</string>
+    <string name="sotiendatra">Amount paid</string>
+
+</resources>
