@@ -21,7 +21,7 @@ public class Variable {
 	public static final int ICON_NO = R.drawable.notien;
 	public static final int ICON_Vay = R.drawable.vaytien_sochitieu;
 
-	public static final int ICON_GridView_Main[] = { R.drawable.giaodich,//0
+	public static final int ICON_GridView_Main[] = { R.drawable.add_item,//0
 		R.drawable.icon_gridview_wallet, //1
 		R.drawable.sono,//2
 		R.drawable.icon_gridview_chart, //3

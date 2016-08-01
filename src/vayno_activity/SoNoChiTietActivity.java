@@ -3,6 +3,10 @@ package vayno_activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import object.SoChiTieu_Obj;
@@ -120,10 +124,28 @@ public class SoNoChiTietActivity extends Activity{
 			changeTextViewThuChiVayNo(values);
 		}		
 	}
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.so_no);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		/*
 		 * Tao cac quickAction
 		 */		

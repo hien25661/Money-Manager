@@ -6,6 +6,10 @@ import object.ThuChi;
 
 import com.calculator.Calculator_Activity;
 import com.calculator.Calculator_Activity.OnMyDialogResult;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.GridView_main;
 import com.moneylove.R;
 
@@ -151,12 +155,28 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 		ghichu = (EditText) findViewById(R.id.edtGhiChu_vayno);
 
 	}
-
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.vay_no);
-
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		// khoi tao Access_VayNo
 		db = new Access_VayNo(this);
 
@@ -263,10 +283,10 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 
 	private void setTextTvNguoiVayNo() {
 		if (vay_or_no.equalsIgnoreCase("vay")) {
-			ktTen_gd = "Người Vay";
+			ktTen_gd = "Borrower";
 			tvNguoiVayNo.setText(ktTen_gd);
 		} else {
-			ktTen_gd = "Người Cho Vay";
+			ktTen_gd = "Lender";
 			tvNguoiVayNo.setText(ktTen_gd);
 		}
 	}
@@ -344,8 +364,8 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 
 	private AlertDialog makeAndShowDialogBox() {
 		AlertDialog dialogbox = new AlertDialog.Builder(this)
-		.setMessage("Không được bỏ trống \n " + ktTen_gd + "\n Số tiền")
-		.setPositiveButton("Xong",
+		.setMessage("Cannot be empty \n " + ktTen_gd + "\n Amount of money")
+		.setPositiveButton("OK",
 				new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
@@ -365,7 +385,7 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 			return false;
 		}else{ 
 			try {
-				sotien = Float.valueOf(so_tien.getText().toString().trim());
+				sotien = Float.valueOf(so_tien.getText().toString().trim().replace(",", ""));
 				ThuChi vn = new ThuChi();
 				// Lay cac ky tu T:Thu , C : Chi , N :no ,V : Vay
 				vn.setMa_id(vay_or_no);
@@ -385,11 +405,11 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 				// Toast.makeText(this, "Bạn chưa nhập đầy đủ " +e.getMessage(),
 				// Toast.LENGTH_LONG).show();
 				if(vay_or_no.equals("no")){
-					Toast.makeText(this,"Khoản nợ và số tiền không được phép bỏ trống",
+					Toast.makeText(this,"Amount of debt is not allowed vacated",
 							Toast.LENGTH_LONG).show();
 				}
 				else{
-					Toast.makeText(this,"Khoản " + vay_or_no+ " và số tiền không được phép bỏ trống",
+					Toast.makeText(this,"Amount not allowed vacated",
 							Toast.LENGTH_LONG).show();
 				}
 			}
@@ -406,13 +426,13 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 			return false;
 		}else{ 
 			try {
-				sotien = Float.valueOf(so_tien.getText().toString().trim());
+				sotien = Float.valueOf(so_tien.getText().toString().trim().replace(",", ""));
 				//select tong tien da tra neu sotien nhap vao < hon so tien trong QuaKhu
 				//=> bao loi
 				float sotienQuaKhu = db.selectTongSoTienDaTra(Update_tc.getId());
 				if(sotien < sotienQuaKhu){//so tien phai lon hon so tien da nhan
 
-					Toast.makeText(getApplicationContext(),"Số Tiền phải lớn hơn tiền thu được \n Tổng thu là: "+ 
+					Toast.makeText(getApplicationContext(),"Amount must be greater than the proceeds \n Total:"+ 
 							new Simple_method().KiemtraSoFloat_Int(sotienQuaKhu)+" ", Toast.LENGTH_LONG).show();
 					return false;
 				}
@@ -437,11 +457,11 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 				return true;
 			} catch (Exception e) {
 				if(vay_or_no.equals("no")){
-					Toast.makeText(this,"Khoản nợ và số tiền không được phép bỏ trống",
+					Toast.makeText(this,"Amount of debt is not allowed vacated",
 							Toast.LENGTH_LONG).show();
 				}
 				else{
-					Toast.makeText(this,"Khoản " + vay_or_no+ " và số tiền không được phép bỏ trống",
+					Toast.makeText(this,"Amount not allowed vacated",
 							Toast.LENGTH_LONG).show();
 				}
 			}

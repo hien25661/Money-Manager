@@ -40,6 +40,10 @@ import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 import application.MySharedPreference;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 /*
  * Khoi dau code: doc onTabChanged()
@@ -162,10 +166,28 @@ public class ChiTieuActivity_BanPhu extends Activity implements OnGestureListene
 		tabs.setCurrentTab(1);
 		tabs.setOnTabChangedListener(this);
 	}
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sothuchi);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		//ket noi giua textView, Button, LinearLayout
 		intent = getIntent();
 		ConnectLayout();

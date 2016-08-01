@@ -24,6 +24,10 @@ import util.Variable;
 import vayno_activity.QuaKhuDaTraActiviy;
 import vayno_activity.SoNoChiTietActivity;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import access_sql.Access_VayNo;
@@ -171,10 +175,28 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 	private final int ID_DaTra = 4;
 	private final int ID_Call = 5;
 	/** Called when the activity is first created. */
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sothuchi);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		intent = getIntent();
 
 		//ConnectLayout lien ket code va xml
@@ -1011,14 +1033,14 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 		if(val.getTongThu() != 0 || val.getTongChi()!=0){
 			float tong = val.getTongThu() - val.getTongChi();
 			if(tong>0){
-				tvTong_sothuchi.setText("Tổng tiền: "+doi.KiemtraSoFloat_Int(tong));
+				tvTong_sothuchi.setText("Total: "+doi.KiemtraSoFloat_Int(tong));
 				tvTong_sothuchi.setBackgroundColor(getResources().getColor(R.color.mauXanh_Thu));
 			}else{
-				tvTong_sothuchi.setText("Tổng tiền: "+doi.KiemtraSoFloat_Int(tong));
+				tvTong_sothuchi.setText("Total: "+doi.KiemtraSoFloat_Int(tong));
 				tvTong_sothuchi.setBackgroundColor(getResources().getColor(R.color.mauDo_Chi));
 			}
 		}else{
-			tvTong_sothuchi.setText("Tổng tiền: 0");
+			tvTong_sothuchi.setText("Total: 0");
 			tvTong_sothuchi.setBackgroundColor(getResources().getColor(R.color.mauXanh_Thu));
 		}
 

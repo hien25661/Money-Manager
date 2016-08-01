@@ -15,6 +15,10 @@ import org.xml.sax.XMLReader;
 
 import com.doi_tien_te.Doi_Tien_Te;
 import com.doi_tien_te.TienTeHandler;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import object.ob_chart;
@@ -142,10 +146,28 @@ public class ThongKe_Activity extends Activity{
 		}
 
 	}
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chart_pie);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		intent = getIntent();
 		finalLayout = (LinearLayout) findViewById(R.id.pie_container);
 		ConnetLayout();

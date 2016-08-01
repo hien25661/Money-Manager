@@ -2,6 +2,10 @@ package congcu_chia_tien;
 
 import util.Simple_method;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import android.app.Activity;
@@ -24,13 +28,30 @@ public class ChiaTienActivity extends Activity{
 	int songuoi=1;
 	Intent intent;
 	EditText edTyLeTip,edSoNguoi,edSoTien;
-
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		intent = getIntent();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chia_tien_activity);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		Button btnTinhTien = (Button)ChiaTienActivity.this.findViewById(R.id.btnChiaTien);
 		edSoTien = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
 		edSoNguoi = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoNguoi);

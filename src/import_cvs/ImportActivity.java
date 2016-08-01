@@ -138,7 +138,7 @@ public class ImportActivity extends Activity{
 			{
 				Toast.makeText(getApplicationContext(), "Import failed", Toast.LENGTH_LONG).show();
 			}
-
+			finish();
 
 
 

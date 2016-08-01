@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
 
     <application
         android:name="application.MyApplication"
@@ -76,7 +77,12 @@
           Dinh nghia 1 activiy theo kieu Dialog
           android:theme="@android:style/Theme.Dialog"
         -->
-
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+             <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
     </application>
 
 </manifest>

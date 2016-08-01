@@ -20,6 +20,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import java.text.ParseException;
@@ -43,11 +47,28 @@ public class ThayDoi_ThongKe_PieActivity  extends Activity implements OnClickLis
 	boolean ktDateVay_or_Tra  = false; 
 	String tuNgay,toiNgay,thu_Or_chi="chi";
 	SimpleDateFormat dateTv = new SimpleDateFormat("dd/MM/yyyy");
-
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.thaydoi_thongke_pie);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		intent = getIntent();
 
 		ConnectLayout();

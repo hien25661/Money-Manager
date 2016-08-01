@@ -257,8 +257,8 @@ public class Doi_Tien_Te extends Activity implements OnItemSelectedListener, OnT
 
 		AlertDialog myDialog = new AlertDialog.Builder(this)
 		// set message, title, and icon
-		.setTitle("Có lỗi xảy ra")
-		.setMessage("Bạn chưa nhập đủ thông tin !")
+		.setTitle("An error occurred")
+		.setMessage("You have not entered enough information!")
 		.setIcon(R.drawable.error)
 		.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 			@Override

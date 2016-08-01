@@ -9,6 +9,10 @@ import sochitieu.Item;
 import util.Simple_method;
 import util.Variable;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import access_sql.Access_VayNo;
@@ -33,10 +37,28 @@ public class QuaKhuDaTraActiviy extends Activity implements OnItemClickListener{
 	private Access_VayNo db;
 	private SoChiTieu_Obj values;
 	private EntryAdapter adapter;
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.so_no);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		intent = getIntent();
 		Bundle bundle = intent.getExtras();
 		int id = bundle.getInt("idQuaKhu");

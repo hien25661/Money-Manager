@@ -1,156 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".QuanLyActivity" 
-    >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Money Manager"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+    tools:context=".QuanLyActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:weightSum="4" >
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Money Manager"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/mauDo_Chi"
-                android:orientation="horizontal"
-                android:weightSum="4" >
-
-                <TextView
-                    android:id="@+id/tv_main1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Today"
-                    android:textStyle="bold"
-                    android:textColor="@color/mauTrang_Chu" />
-
-                <TextView
-                    android:id="@+id/tv_main2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Total"
-                      android:textStyle="bold"
-                    android:textColor="@color/mauTrang_Chu" />
-
-                <TextView
-                    android:id="@+id/tv_main3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Week"
-                      android:textStyle="bold"
-                    android:textColor="@color/mauTrang_Chu" />
-
-                <TextView
-                    android:id="@+id/tv_main4"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Month"
-                      android:textStyle="bold"
-                    android:textColor="@color/mauTrang_Chu" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="4" >
-
-                <TextView
-                    android:id="@+id/tvMoneyToday"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mauXanh_Thu"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="0"
-                    android:textColor="@color/mauTrang_Chu"
-                    android:textSize="@dimen/size_tvSoThuChi" />
-
-                <TextView
-                    android:id="@+id/tvMoneyTotal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mauXanh_Thu"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="0"
-                    android:textColor="@color/mauTrang_Chu"
-                    android:textSize="@dimen/size_tvSoThuChi" />
-
-                <TextView
-                    android:id="@+id/tvMoneyTuan"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mauXanh_Thu"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="0"
-                    android:textColor="@color/mauTrang_Chu"
-                    android:textSize="@dimen/size_tvSoThuChi" />
-
-                <TextView
-                    android:id="@+id/tvMoneyThang"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/mauXanh_Thu"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="0"
-                    android:textColor="@color/mauTrang_Chu"
-                    android:textSize="@dimen/size_tvSoThuChi" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="1" >
+            android:orientation="vertical"
+            android:weightSum="4" >
 
-            <ScrollView
-                android:id="@+id/ScrollView11"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mauDo_Chi"
+                    android:orientation="horizontal"
+                    android:weightSum="4" >
+
+                    <TextView
+                        android:id="@+id/tv_main1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Today"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_main2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Total"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_main3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Week"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_main4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Month"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4" >
+
+                    <TextView
+                        android:id="@+id/tvMoneyToday"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/mauXanh_Thu"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="0"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textSize="@dimen/size_tvSoThuChi" />
+
+                    <TextView
+                        android:id="@+id/tvMoneyTotal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/mauXanh_Thu"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="0"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textSize="@dimen/size_tvSoThuChi" />
+
+                    <TextView
+                        android:id="@+id/tvMoneyTuan"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/mauXanh_Thu"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="0"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textSize="@dimen/size_tvSoThuChi" />
+
+                    <TextView
+                        android:id="@+id/tvMoneyThang"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/mauXanh_Thu"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="0"
+                        android:textColor="@color/mauTrang_Chu"
+                        android:textSize="@dimen/size_tvSoThuChi" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:fillViewport="true" >
+                android:layout_weight="1" >
 
-                <GridView
-                    android:id="@+id/grid"
+                <ScrollView
+                    android:id="@+id/ScrollView11"
                     android:layout_width="fill_parent"
-                    android:layout_height="408dp"
-                    android:columnWidth="250dp"
-                    android:gravity="center"
-                    android:horizontalSpacing="10dp"
-                    android:numColumns="2"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="20dp" >
-                </GridView>
-            </ScrollView>
-           
-        </RelativeLayout>
+                    android:layout_height="fill_parent"
+                    android:fillViewport="true" >
+
+                    <GridView
+                        android:id="@+id/grid"
+                        android:layout_width="fill_parent"
+                        android:layout_height="408dp"
+                        android:columnWidth="250dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="10dp"
+                        android:numColumns="2"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="20dp" >
+                    </GridView>
+                </ScrollView>
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ads_id_banner" >
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

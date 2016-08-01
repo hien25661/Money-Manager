@@ -24,5 +24,7 @@
     <string name="datra">Paid</string>
     <string name="dong">Close</string>
     <string name="sotiendatra">Amount paid</string>
+     <string name="ads_id_banner">ca-app-pub-4133054392126687/8577490453</string>
+    <string name="ads_id_interstis">ca-app-pub-4133054392126687/1054223656</string>
 
 </resources>

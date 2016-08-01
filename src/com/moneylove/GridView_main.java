@@ -14,9 +14,12 @@ import object.QuanLyTienObject;
 import object.ThuChi;
 import quickAction.ChiTieuActivity;
 
-
 import com.calculator.Calculator_Activity;
 import com.doi_tien_te.Doi_Tien_Te;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 
 import congcu_chia_tien.ChiaTienActivity;
 
@@ -61,9 +64,8 @@ import application.MyApplication;
 import application.MySharedPreference;
 
 public class GridView_main extends Activity implements OnItemClickListener {
-	private final String[] quanlyValues = { "Add Item", "Book Spending",
-			"Paybook", "Chart", "Currency exchange", "Export CSV file",
-			"Restore data","Erase all data","Statistics Month","Disunite Money"};
+	private final String[] quanlyValues = { "Add Item", "Book Spending", "Paybook", "Chart", "Currency exchange",
+			"Export CSV file", "Restore data", "Erase all data", "Statistics Month", "Disunite Money" };
 	private Database db;
 	private TextView tvMoneyToday, tvMoneyTotal, tvMoneyTuan, tvMoneyThang;
 	private LayDate_Month_Yeah date = new LayDate_Month_Yeah();
@@ -75,12 +77,29 @@ public class GridView_main extends Activity implements OnItemClickListener {
 
 	// private QuanLyTienObject qltDB; // lay du lieu Hom nay, Thang, Tuan (gui
 	// qua ThuChiActivity , VayNoActivity xu ly
+	AdView adView;
+	InterstitialAd interstitial;
 
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 		setContentView(R.layout.main);
-
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		/*
 		 * khoi tao cac TextView So lieu Today, Total, Tuan, Thang
 		 */
@@ -96,11 +115,10 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		mySharedPreferences = getSharedPreferences(NameSharedPreference, mode);
 		// is there an existing Preferences from previous executions of this
 		// app?
-		if (mySharedPreferences != null
-				&& mySharedPreferences.contains("currentDate")) {
+		if (mySharedPreferences != null && mySharedPreferences.contains("currentDate")) {
 			new MySharedPreference().showPreferences(mySharedPreferences);
 			callTextView();
-		} else {//load lan dau tien
+		} else {// load lan dau tien
 			loadSharedPreferece = false;
 		}
 
@@ -109,8 +127,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		 * khoi tao grid View
 		 */
 		GridView gv = (GridView) findViewById(R.id.grid);
-		gv.setAdapter(new adapter.GridView_BaseAdapter(this, quanlyValues,
-				Variable.ICON_GridView_Main));
+		gv.setAdapter(new adapter.GridView_BaseAdapter(this, quanlyValues, Variable.ICON_GridView_Main));
 		gv.setOnItemClickListener(this);
 		/*
 		 * Kiem tra database table QuanLyTien => True lay gia tri in else mac
@@ -126,41 +143,35 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		tvMoneyTuan.setText(doi.KiemtraSoFloat_Int(MyApplication.tuan));
 		tvMoneyThang.setText(doi.KiemtraSoFloat_Int(MyApplication.thang));
 		if (MyApplication.homnay < 0) {
-			tvMoneyToday.setBackgroundColor(this.getResources().getColor(
-					R.color.mauDo_Chi));
-		}else{
-			tvMoneyToday.setBackgroundColor(this.getResources().getColor(
-					R.color.mauXanh_Thu));
+			tvMoneyToday.setBackgroundColor(this.getResources().getColor(R.color.mauDo_Chi));
+		} else {
+			tvMoneyToday.setBackgroundColor(this.getResources().getColor(R.color.mauXanh_Thu));
 		}
 		if (MyApplication.tongtien < 0) {
-			tvMoneyTotal.setBackgroundColor(this.getResources().getColor(
-					R.color.mauDo_Chi));
-		}else{
-			tvMoneyTotal.setBackgroundColor(this.getResources().getColor(
-					R.color.mauXanh_Thu));
+			tvMoneyTotal.setBackgroundColor(this.getResources().getColor(R.color.mauDo_Chi));
+		} else {
+			tvMoneyTotal.setBackgroundColor(this.getResources().getColor(R.color.mauXanh_Thu));
 		}
 
 		if (MyApplication.tuan < 0) {
-			tvMoneyTuan.setBackgroundColor(this.getResources().getColor(
-					R.color.mauDo_Chi));
-		}else{
-			tvMoneyTuan.setBackgroundColor(this.getResources().getColor(
-					R.color.mauXanh_Thu));
+			tvMoneyTuan.setBackgroundColor(this.getResources().getColor(R.color.mauDo_Chi));
+		} else {
+			tvMoneyTuan.setBackgroundColor(this.getResources().getColor(R.color.mauXanh_Thu));
 		}
 		if (MyApplication.thang < 0) {
-			tvMoneyThang.setBackgroundColor(this.getResources().getColor(
-					R.color.mauDo_Chi));
-		}else{
-			tvMoneyThang.setBackgroundColor(this.getResources().getColor(
-					R.color.mauXanh_Thu));
+			tvMoneyThang.setBackgroundColor(this.getResources().getColor(R.color.mauDo_Chi));
+		} else {
+			tvMoneyThang.setBackgroundColor(this.getResources().getColor(R.color.mauXanh_Thu));
 		}
 	}
+
 	@Override
 	public void onBackPressed() { // ham back
 		super.onBackPressed();
 		finish();
 
 	}
+
 	@Override
 	protected void onPause() {
 		// Log.i("TAG","Pause GridView insert shared Preferece");
@@ -169,7 +180,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 
 	@Override
 	protected void onDestroy() {
-		Log.i("TAG","onDestroy GridView");
+		Log.i("TAG", "onDestroy GridView");
 		super.onDestroy();
 	}
 
@@ -204,10 +215,9 @@ public class GridView_main extends Activity implements OnItemClickListener {
 			dialog.setCanceledOnTouchOutside(true);
 			dialog.show();
 		}
-		break;
+			break;
 		case 1: { // so chi tieu
-			Intent intent = new Intent(GridView_main.this,
-					ChiTieuActivity.class);
+			Intent intent = new Intent(GridView_main.this, ChiTieuActivity.class);
 			startActivityForResult(intent, Variable.requestcode_SoChiTieu);
 			break;
 		}
@@ -217,19 +227,18 @@ public class GridView_main extends Activity implements OnItemClickListener {
 			break;
 		}
 		case 3: { // thong ke
-			Intent intent = new Intent(GridView_main.this,
-					ThongKe_Activity.class);
+			Intent intent = new Intent(GridView_main.this, ThongKe_Activity.class);
 			startActivity(intent);
 			break;
 		}
 		case 4: { // doi tien
 			CodeHeThong check = new CodeHeThong();
 			boolean checkInternet = check.checkInternetMobile(getApplicationContext());
-			if(checkInternet==false){
-				//Log.e("TAG","Chay dialog");
+			if (checkInternet == false) {
+				// Log.e("TAG","Chay dialog");
 				AlertDialog dialog2 = makeDialogInternet();
 				dialog2.show();
-			}else{
+			} else {
 				Intent intent = new Intent(GridView_main.this, Doi_Tien_Te.class);
 				startActivityForResult(intent, Variable.requestcode_MoRong);
 			}
@@ -237,157 +246,144 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		}
 		case 5: { // tim kiem
 			// xuat file cvs
-			Intent intent = new Intent(GridView_main.this,ExportActivity.class);
-			startActivity(intent); 
+			Intent intent = new Intent(GridView_main.this, ExportActivity.class);
+			startActivity(intent);
 
 			break;
 		}
-		case 6: { 
-			/*	// tim kiem
-			Intent intent = new Intent(GridView_main.this,
-			ChiTieuActivity.class); startActivity(intent);
-			break;*/
+		case 6: {
+			/*
+			 * // tim kiem Intent intent = new Intent(GridView_main.this,
+			 * ChiTieuActivity.class); startActivity(intent); break;
+			 */
 			AlertDialog dialogImport = makeDialog_ImportData();
 			dialogImport.show();
 			break;
 		}
-		case 7: 
-		{ //Xoa sach du lieu
+		case 7: { // Xoa sach du lieu
 			AlertDialog dialog = makeDialog_RemoveData();
 			dialog.show();
 			break;
 		}
-		case 8: 
-		{ 
+		case 8: {
 			break;
 		}
-		case 9: 
-		{ //chia tien
-			Intent intent = new Intent(GridView_main.this,ChiaTienActivity.class); 
+		case 9: { // chia tien
+			Intent intent = new Intent(GridView_main.this, ChiaTienActivity.class);
 			startActivityForResult(intent, Variable.requestcode_MoRong);
 			break;
 		}
 		}// close switch
 
 	}// close switch case
+
 	private AlertDialog makeDialogInternet() {
 
 		AlertDialog myDialog = new AlertDialog.Builder(this)
-		// set message, title, and icon
-		.setTitle("Error Connect")
-		.setMessage("Please Connect Internet")
-		.setIcon(R.drawable.error)
-		.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int whichButton) {
+				// set message, title, and icon
+				.setTitle("Error Connect").setMessage("Please Connect Internet").setIcon(R.drawable.error)
+				.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int whichButton) {
 
-			}
-		}).create();
+					}
+				}).create();
 		return myDialog;
 	}
+
 	private AlertDialog makeDialog_RemoveData() {
-		AlertDialog myDialogBox = new AlertDialog.Builder(this)	
-		// set message, title, and icon
-		.setTitle("Note").setMessage("Are you sure you want to delete all data ?")
-		.setIcon(R.drawable.error)
-		.setPositiveButton("Yes",
-				new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog,
-					int whichButton) {	
-				Database db = new Database(getApplicationContext());
-				db.ClearDataBase();
-				MyApplication.homnay = 0;
-				MyApplication.tongtien = 0;
-				MyApplication.thang = 0;
-				MyApplication.tuan = 0;
-				SharedPreferences mySharedPreferences = GridView_main.this.getSharedPreferences(
-						"SharedPreferences_MoneyLover", Activity.MODE_PRIVATE);
-				new MySharedPreference().savePreferences(mySharedPreferences);
-				callTextView();
+		AlertDialog myDialogBox = new AlertDialog.Builder(this)
+				// set message, title, and icon
+				.setTitle("Note").setMessage("Are you sure you want to delete all data ?").setIcon(R.drawable.error)
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						Database db = new Database(getApplicationContext());
+						db.ClearDataBase();
+						MyApplication.homnay = 0;
+						MyApplication.tongtien = 0;
+						MyApplication.thang = 0;
+						MyApplication.tuan = 0;
+						SharedPreferences mySharedPreferences = GridView_main.this
+								.getSharedPreferences("SharedPreferences_MoneyLover", Activity.MODE_PRIVATE);
+						new MySharedPreference().savePreferences(mySharedPreferences);
+						callTextView();
 
+					}
 
-			}
+				})// setPositiveButton
 
-		})// setPositiveButton
+				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// whatever should be done when answering "NO"
+						// goes here
+						// whichButton =-2
+					}
+				})// setNegativeButton
 
-		.setNegativeButton("No",
-				new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog,
-					int whichButton) {
-				// whatever should be done when answering "NO"
-				// goes here
-				// whichButton =-2
-			}
-		})// setNegativeButton
-
-		.create();
+				.create();
 
 		return myDialogBox;
 	}
 
 	private AlertDialog makeDialog_ImportData() {
-		AlertDialog myDialogBox = new AlertDialog.Builder(this)	
-		// set message, title, and icon
-		.setTitle("Warning").setMessage("Are you sure you want to restore data ?")
-		.setIcon(R.drawable.error)
-		.setPositiveButton("Yes",
-				new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog,
-					int whichButton) {	
-				Database db = new Database(getApplicationContext());
-				db.ClearDataBase();
-				MyApplication.homnay = 0;
-				MyApplication.tongtien = 0;
-				MyApplication.thang = 0;
-				MyApplication.tuan = 0;
-				SharedPreferences mySharedPreferences = GridView_main.this.getSharedPreferences(
-						"SharedPreferences_MoneyLover", Activity.MODE_PRIVATE);
-				new MySharedPreference().savePreferences(mySharedPreferences);
-				callTextView();
-				dialog.dismiss();
-				Intent intent = new Intent(GridView_main.this, ImportActivity.class);
-				startActivityForResult(intent, Variable.requestcode_MoRong);
-			}
+		AlertDialog myDialogBox = new AlertDialog.Builder(this)
+				// set message, title, and icon
+				.setTitle("Warning").setMessage("Are you sure you want to restore data ?").setIcon(R.drawable.error)
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						Database db = new Database(getApplicationContext());
+						db.ClearDataBase();
+						MyApplication.homnay = 0;
+						MyApplication.tongtien = 0;
+						MyApplication.thang = 0;
+						MyApplication.tuan = 0;
+						SharedPreferences mySharedPreferences = GridView_main.this
+								.getSharedPreferences("SharedPreferences_MoneyLover", Activity.MODE_PRIVATE);
+						new MySharedPreference().savePreferences(mySharedPreferences);
+						callTextView();
+						dialog.dismiss();
+						Intent intent = new Intent(GridView_main.this, ImportActivity.class);
+						startActivityForResult(intent, Variable.requestcode_MoRong);
+					}
 
-		})// setPositiveButton
+				})// setPositiveButton
 
-		.setNegativeButton("No",
-				new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog,
-					int whichButton) {
-				// whatever should be done when answering "NO"
-				// goes here
-				// whichButton =-2
-			}
-		})// setNegativeButton
+				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// whatever should be done when answering "NO"
+						// goes here
+						// whichButton =-2
+					}
+				})// setNegativeButton
 
-		.create();
+				.create();
 
 		return myDialogBox;
 	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
 		try {
-			if(resultCode == Activity.RESULT_OK){
-				if(requestCode == Variable.requestcode_InsertThuChi){
-					// Log.i("TAG","onActivityResult setResult goi callTextView");
-					loadSharedPreferece = true; //thuc hien load shareRefece
-				}else if(requestCode == Variable.requestcode_InsertVayNo){
-					//ko can load share
-					loadSharedPreferece = false; //khoa ko load share
-				}else{
-					loadSharedPreferece = false; 
+			if (resultCode == Activity.RESULT_OK) {
+				if (requestCode == Variable.requestcode_InsertThuChi) {
+					// Log.i("TAG","onActivityResult setResult goi
+					// callTextView");
+					loadSharedPreferece = true; // thuc hien load shareRefece
+				} else if (requestCode == Variable.requestcode_InsertVayNo) {
+					// ko can load share
+					loadSharedPreferece = false; // khoa ko load share
+				} else {
+					loadSharedPreferece = false;
 				}
-			}else{// truong hop Activity.Cacecl
-				//ngoai tru SoChieuTieu phai load lai vi 
-				//SoChitieu Co chuc nang them
-				if(requestCode == Variable.requestcode_SoChiTieu){
-					loadSharedPreferece = true; //thuc hien load shareRefece
-				}
-				else{
-					loadSharedPreferece = false; //=> ko load lai sharePrefece
+			} else {// truong hop Activity.Cacecl
+					// ngoai tru SoChieuTieu phai load lai vi
+					// SoChitieu Co chuc nang them
+				if (requestCode == Variable.requestcode_SoChiTieu) {
+					loadSharedPreferece = true; // thuc hien load shareRefece
+				} else {
+					loadSharedPreferece = false; // => ko load lai sharePrefece
 				}
 			}
 
@@ -397,4 +393,3 @@ public class GridView_main extends Activity implements OnItemClickListener {
 
 	}
 }// close GridView_main
-

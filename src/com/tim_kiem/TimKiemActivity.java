@@ -2,6 +2,10 @@ package com.tim_kiem;
 
 import java.util.List;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.R;
 
 import util.Variable;
@@ -31,13 +35,30 @@ public class TimKiemActivity extends Activity implements OnClickListener,
 	private Database db;
 	private Spinner spLoai;
 	private Button btntimkiem;
-	private String[] items = { "Tất cả", "Thu", "Chi", "Nợ", "Vay" };
-
+	private String[] items = { "All", "Earn", "Spend", "Owe", "Loan" };
+	AdView adView;
+	InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tim_kiem_layout);
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		db = new Database(this);
 		tvketqua = (EditText) findViewById(R.id.tvLoai);
 		edTen = (EditText) findViewById(R.id.edTen);

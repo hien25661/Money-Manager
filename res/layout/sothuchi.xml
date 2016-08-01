@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -7,192 +8,208 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="6"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="4" >
+        android:weightSum="7" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:background="@color/GreenChuDe"
-            android:weightSum="6" >
-
-            <Button
-                android:id="@+id/btnBack_sochitieu"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="left|center"
-                android:layout_weight="1"
-                android:background="@color/docam"
-                android:text="@string/Back"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
-
-            <TextView
-                android:id="@+id/tvDate_sothuchi"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="4"
-                android:gravity="center"
-                android:text="01/04-30/04"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/sizeFontChude"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnThem_sochitieu"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_gravity="right|center"
-                android:layout_weight="1"
-                android:background="@color/docam"
-                android:text="@string/them"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llayout_sothuchi"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:orientation="horizontal"
+            android:layout_weight="6"
+            android:orientation="vertical"
             android:weightSum="4" >
 
-            <TextView
-                android:id="@+id/tvTong_sothuchi"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@color/mauXanh_Thu"
-                android:gravity="center"
-                android:text="Total money"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
+                android:layout_weight="2"
+                android:background="@color/GreenChuDe"
+                android:weightSum="6" >
 
-            <TextView
-                android:id="@+id/tvThu_sothuchi"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@color/mauXanh_Thu"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
+                <Button
+                    android:id="@+id/btnBack_sochitieu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left|center"
+                    android:layout_weight="1"
+                    android:background="@color/docam"
+                    android:text="@string/Back"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
 
-            <TextView
-                android:id="@+id/tvChi_sothuchi"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@color/mauDo_Chi"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
+                <TextView
+                    android:id="@+id/tvDate_sothuchi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="01/04-30/04"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/sizeFontChude"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvVay_sothuchi"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@color/mauCam_Vay"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
+                <Button
+                    android:id="@+id/btnThem_sochitieu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="right|center"
+                    android:layout_weight="1"
+                    android:background="@color/docam"
+                    android:text="@string/them"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvNo_sothuchi"
-                android:layout_width="fill_parent"
+            <LinearLayout
+                android:id="@+id/llayout_sothuchi"
+                android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@color/mauDen_No"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/mauTrang_Chu"
-                android:textSize="@dimen/size_tvSoThuChi" />
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/tvTong_sothuchi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/mauXanh_Thu"
+                    android:gravity="center"
+                    android:text="Total money"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+
+                <TextView
+                    android:id="@+id/tvThu_sothuchi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/mauXanh_Thu"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+
+                <TextView
+                    android:id="@+id/tvChi_sothuchi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/mauDo_Chi"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+
+                <TextView
+                    android:id="@+id/tvVay_sothuchi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/mauCam_Vay"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+
+                <TextView
+                    android:id="@+id/tvNo_sothuchi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@color/mauDen_No"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/mauTrang_Chu"
+                    android:textSize="@dimen/size_tvSoThuChi" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <TabHost
-        android:id="@+id/tabhost"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1" >
-
-        <LinearLayout
+        <TabHost
+            android:id="@+id/tabhost"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:weightSum="3" >
+            android:layout_weight="1" >
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="3" >
+                android:orientation="vertical"
+                android:weightSum="3" >
 
-                <LinearLayout
-                    android:id="@+id/tab1"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="vertical" >
+                    android:layout_weight="3" >
 
-                    <TextView
-                        android:id="@+id/tvEmptyData"
-                        android:layout_width="fill_parent"
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
                         android:layout_height="fill_parent"
-                        android:gravity="center"
-                        android:hint="@string/emptyData"
-                        android:textSize="@dimen/sizeFontChude"
-                        android:textStyle="italic" />
+                        android:orientation="vertical" >
+                    </LinearLayout>
 
-                    <ListView
-                        android:id="@+id/listview_sothuchi"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" >
-                    </ListView>
-                </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
 
-                <LinearLayout
-                    android:id="@+id/tab3"
+                        <TextView
+                            android:id="@+id/tvEmptyData"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:hint="@string/emptyData"
+                            android:textSize="@dimen/sizeFontChude"
+                            android:textStyle="italic" />
+
+                        <ListView
+                            android:id="@+id/listview_sothuchi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent" >
+                        </ListView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvEmptyDataTheLoai"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:hint="@string/emptyData" />
+
+                        <ListView
+                            android:id="@+id/listTheLoai_sothuchi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent" >
+                        </ListView>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <TabWidget
+                    android:id="@android:id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom" >
+                </TabWidget>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tvEmptyDataTheLoai"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:gravity="center"
-                        android:hint="@string/emptyData" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ads_id_banner" >
+    </com.google.android.gms.ads.AdView>
 
-                    <ListView
-                        android:id="@+id/listTheLoai_sothuchi"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" >
-                    </ListView>
-                </LinearLayout>
-            </FrameLayout>
-
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="bottom" >
-            </TabWidget>
-        </LinearLayout>
-    </TabHost>
-
-</LinearLayout>
+</RelativeLayout>

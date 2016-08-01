@@ -39,6 +39,10 @@ import application.MySharedPreference;
 
 import com.calculator.Calculator_Activity;
 import com.calculator.Calculator_Activity.OnMyDialogResult;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.moneylove.GridView_main;
 import com.moneylove.R;
 
@@ -147,12 +151,28 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 		ngay.setOnClickListener(this);
 		btnKetqua.setOnClickListener(this);
 	}
-
+	AdView adView;
+    InterstitialAd interstitial;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.thuchi);
-
+		adView = (AdView) findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
+		// Prepare the Interstitial Ad
+		interstitial = new InterstitialAd(this);
+		// Insert the Ad Unit ID
+		interstitial.setAdUnitId(getResources().getString(R.string.ads_id_interstis));
+		// Request for Ads
+		adRequest = new AdRequest.Builder().build();
+		// Load ads into Interstitial Ads
+		interstitial.loadAd(adRequest);
+		interstitial.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			public void onAdClosed() {
+			}
+		});
 		// khoi tao database
 		db = new Database(this);
 
@@ -381,11 +401,11 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 			return false;
 		} else {
 			try {
-				sotien = Float.valueOf(so_tien.getText().toString().trim());
+				sotien = Float.valueOf(so_tien.getText().toString().trim().replace(",", ""));
 				ten_gd = ten_giao_dich.getText().toString().trim();
 
 				if(ten_gd.length()==0){
-					Toast.makeText(getApplicationContext(), "Tên Giao Dịch không được bỏ trống", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Transaction Name must not be blank", Toast.LENGTH_LONG).show();
 					return false;
 				}
 				// Ma_id la cac: thu , chi
@@ -412,8 +432,7 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 				db.insertThuChi(thuchi);
 				return true;
 			} catch (Exception e) {
-				Toast.makeText(this,"Khoản " + thu_or_chi
-						+ " và số tiền không được phép bỏ trống",
+				Toast.makeText(this,"Amount not allowed vacated",
 						Toast.LENGTH_LONG).show();
 			}
 		}
@@ -528,13 +547,12 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 		String ten_gd,date;
 		ten_gd = ten_giao_dich.getText().toString();
 		if(ten_gd.length() == 0){
-			Toast.makeText(this,"Khoản " + thu_or_chi
-					+ " không được phép bỏ trống",
+			Toast.makeText(this,"Cannot be empty",
 					Toast.LENGTH_LONG).show();
 			return false;
 		}else{
 			try {
-				sotien_edit = Float.valueOf(so_tien.getText().toString().trim());
+				sotien_edit = Float.valueOf(so_tien.getText().toString().trim().replace(",", ""));
 
 				ten_gd = ten_giao_dich.getText().toString().trim();
 				date = ngay.getText().toString();
@@ -563,8 +581,7 @@ public class ThuChiActivity extends Activity implements OnClickListener {
 				db.Update_OneRowDatabase(Update_tc);
 				return true;
 			} catch (Exception e) {
-				Toast.makeText(this,"Khoản " + thu_or_chi
-						+ " và số tiền không được phép bỏ trống",
+				Toast.makeText(this,"Cannot be empty",
 						Toast.LENGTH_LONG).show();
 				Log.e("TAG", "class.ThuChiActivity.updateThuChiActivity "+ e.getMessage());
 			}
