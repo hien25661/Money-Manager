@@ -5,17 +5,23 @@
     android:background="@color/GreenChuDe"
     android:gravity="center"
     android:orientation="vertical" >
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:gravity="center_horizontal"
         android:text="@string/themgiaodich"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_marginBottom="10dp"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"

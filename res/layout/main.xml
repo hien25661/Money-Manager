@@ -30,7 +30,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/camSection"
+                android:background="@color/mauDo_Chi"
                 android:orientation="horizontal"
                 android:weightSum="4" >
 
@@ -41,6 +41,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="Today"
+                    android:textStyle="bold"
                     android:textColor="@color/mauTrang_Chu" />
 
                 <TextView
@@ -50,6 +51,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="Total"
+                      android:textStyle="bold"
                     android:textColor="@color/mauTrang_Chu" />
 
                 <TextView
@@ -59,6 +61,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="Week"
+                      android:textStyle="bold"
                     android:textColor="@color/mauTrang_Chu" />
 
                 <TextView
@@ -68,6 +71,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="Month"
+                      android:textStyle="bold"
                     android:textColor="@color/mauTrang_Chu" />
             </LinearLayout>
 
@@ -122,7 +126,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1" >
@@ -145,7 +149,8 @@
                     android:verticalSpacing="20dp" >
                 </GridView>
             </ScrollView>
-        </LinearLayout>
+           
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
