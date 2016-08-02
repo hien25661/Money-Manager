@@ -1,6 +1,6 @@
 package activity_design;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import object.ThuChi;
 import util.Simple_method;
@@ -56,13 +56,13 @@ public class Dialog_DaTra extends Dialog implements android.view.View.OnClickLis
 				float sotienEdt = Float.valueOf(d);
 				if(sotienEdt>vn.getSo_tien()){
 					edtSotien_dialogpay.setText("");
-					Toast.makeText(context,"Lỗi Nhập, Số tiền nhỏ hơn hoặc bằng " + new Simple_method().KiemtraSoFloat_Int(vn.getSo_tien()),1).show();
+					Toast.makeText(context,"Error, Amount of money must less than " + new Simple_method().KiemtraSoFloat_Int(vn.getSo_tien()),1).show();
 				}else{
 					new Access_VayNo(context).DaTraTienVayNo(vn, sotienEdt);
 					dismiss();
 				}
 			} catch (Exception e) {
-				Toast.makeText(context,"Số tiền không được bỏ trống",1).show();
+				Toast.makeText(context,"Money cannot be empty",1).show();
 			}
 		}
 		break;

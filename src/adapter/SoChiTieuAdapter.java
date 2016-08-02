@@ -3,7 +3,7 @@ package adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import object.ThuChi;
 

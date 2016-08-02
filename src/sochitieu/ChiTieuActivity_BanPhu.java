@@ -44,7 +44,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 /*
  * Khoi dau code: doc onTabChanged()
  * @selectedTab = 2,3 cung tab the loai

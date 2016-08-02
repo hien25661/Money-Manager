@@ -1,6 +1,6 @@
 package activity_design;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import sochitieu.ChiTieuActivity_BanPhu;
 import util.Variable;

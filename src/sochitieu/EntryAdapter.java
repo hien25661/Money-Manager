@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import util.Simple_method;
 import util.Variable;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import android.content.Context;
 import android.content.res.Resources;

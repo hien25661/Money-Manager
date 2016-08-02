@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import application.MyApplication;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 
 public class ImportActivity extends Activity{

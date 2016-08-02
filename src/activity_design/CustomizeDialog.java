@@ -13,7 +13,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class CustomizeDialog extends Dialog implements OnClickListener {
 

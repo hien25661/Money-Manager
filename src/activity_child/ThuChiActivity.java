@@ -37,14 +37,14 @@ import android.widget.Toast;
 import application.MyApplication;
 import application.MySharedPreference;
 
+import com.boxtimer365.moneylove.GridView_main;
 import com.calculator.Calculator_Activity;
 import com.calculator.Calculator_Activity.OnMyDialogResult;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.moneylove.GridView_main;
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class ThuChiActivity extends Activity implements OnClickListener {
 

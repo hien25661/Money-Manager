@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class ThongKe_ThangActivity extends Activity {
 	private TextView tvdate_thongkethang;

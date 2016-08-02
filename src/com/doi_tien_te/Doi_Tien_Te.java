@@ -21,7 +21,7 @@ import org.xml.sax.XMLReader;
 import util.CodeHeThong;
 import util.Simple_method;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;

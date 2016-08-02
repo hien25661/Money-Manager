@@ -28,7 +28,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import access_sql.Access_VayNo;
 import access_sql.Database;
@@ -492,7 +492,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 
 		})// setPositiveButton
 
-		.setNegativeButton("Không",
+		.setNegativeButton("Cancel",
 				new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,
 					int whichButton) {
@@ -543,9 +543,9 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 		});
 		AlertDialog myDialogBox = new AlertDialog.Builder(context)	
 		// set message, title, and icon
-		.setMessage("Số tiền đã trả ")
+		.setMessage("Amount paid ")
 		.setView(input)
-		.setPositiveButton("Đồng ý",
+		.setPositiveButton("OK",
 				new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,
 					int whichButton) {
@@ -573,7 +573,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 
 		})// setPositiveButton
 
-		.setNegativeButton("Không",
+		.setNegativeButton("Cancel",
 				new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog,
 					int whichButton) {

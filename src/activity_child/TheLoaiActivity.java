@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class TheLoaiActivity extends ListActivity {
 

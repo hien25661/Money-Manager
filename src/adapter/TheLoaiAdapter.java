@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class TheLoaiAdapter extends ArrayAdapter<String> {
 

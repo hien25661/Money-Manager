@@ -1,4 +1,4 @@
-package com.moneylove;
+package com.boxtimer365.moneylove;
 
 import import_cvs.ImportActivity;
 
@@ -19,6 +19,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.boxtimer365.moneylove.R;
 
 import congcu_chia_tien.ChiaTienActivity;
 
@@ -177,6 +178,9 @@ public class GridView_main extends Activity implements OnItemClickListener {
 	protected void onPause() {
 		// Log.i("TAG","Pause GridView insert shared Preferece");
 		super.onPause();
+		if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
 	}
 
 	@Override
@@ -191,7 +195,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		loadSharedPreferece = true;
 		// Log.i("TAG","Stop GridView");
 	}
-
+	private int countTime = 0;
 	@Override
 	protected void onResume() {
 		if (mySharedPreferences != null && loadSharedPreferece) {
@@ -201,6 +205,22 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		}
 		// TODO Auto-generated method stub
 		super.onResume();
+		boolean gotoAds = false;
+        boolean isAdshow = false;
+        if (countTime % 3 == 0) {
+            gotoAds = true;
+            if (interstitial.isLoaded()) {
+                interstitial.show();
+                isAdshow = true;
+            }
+        }
+        if (gotoAds) {
+            if (isAdshow) {
+                countTime++;
+            }
+        } else {
+            countTime++;
+        }
 	}
 
 	// ///////////////////////////////////////////////////////////////////
@@ -398,4 +418,5 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		}
 
 	}
+	
 }// close GridView_main

@@ -3,7 +3,8 @@ package com.calculator;
 
 import util.Simple_method;
 
-import com.moneylove.*;
+import com.boxtimer365.moneylove.*;
+import com.boxtimer365.moneylove.R;
 
 import android.app.Dialog;
 import android.content.Context;

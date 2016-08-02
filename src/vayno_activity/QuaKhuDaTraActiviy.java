@@ -13,7 +13,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import access_sql.Access_VayNo;
 import adapter.SoNoAdapter;

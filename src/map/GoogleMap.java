@@ -3,7 +3,7 @@ package map;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class GoogleMap extends Activity  {
 //	MapView map;

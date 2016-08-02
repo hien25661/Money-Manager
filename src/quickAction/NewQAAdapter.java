@@ -1,6 +1,6 @@
 package quickAction;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import android.view.View;
 import android.view.ViewGroup;

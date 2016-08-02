@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import android.app.Activity;
 import android.app.Dialog;

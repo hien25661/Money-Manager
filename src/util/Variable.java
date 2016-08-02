@@ -1,6 +1,6 @@
 package util;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class Variable {
 

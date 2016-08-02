@@ -1,6 +1,6 @@
 package adapter;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

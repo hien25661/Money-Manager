@@ -26,8 +26,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.moneylove.GridView_main;
-import com.moneylove.R;
+import com.boxtimer365.moneylove.GridView_main;
+import com.boxtimer365.moneylove.R;
 
 public class MucLucThongKe extends ListActivity {
 

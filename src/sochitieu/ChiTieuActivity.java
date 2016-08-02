@@ -45,7 +45,7 @@ import android.widget.TextView;
 import application.MyApplication;
 import application.MySharedPreference;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 /*
  * Khoi dau code: doc onTabChanged()
  * @selectedTab = 2,3 cung tab the loai

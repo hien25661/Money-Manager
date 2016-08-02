@@ -1,4 +1,6 @@
-package com.moneylove;
+package com.boxtimer365.moneylove;
+
+import com.boxtimer365.moneylove.R;
 
 import android.app.Activity;
 import android.content.Intent;

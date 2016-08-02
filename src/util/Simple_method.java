@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.widget.TextView;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 public class Simple_method {
 	public String KiemtraSoFloat_Int(float sotien) {

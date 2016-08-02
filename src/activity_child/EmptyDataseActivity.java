@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.moneylove.R;
+import com.boxtimer365.moneylove.R;
 
 import adapter.SoChiTieuAdapter;
 import android.app.Activity;
