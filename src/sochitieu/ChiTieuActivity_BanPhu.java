@@ -303,6 +303,7 @@ public class ChiTieuActivity_BanPhu extends Activity implements OnGestureListene
 
 			Intent i = new Intent(this,ChiTieuActivity_BanPhu.class);
 			startActivity(i);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			finish();
 		}else{ //Activity.RESULT_CANCELED
 			if(requestCode == Variable.requestcode_InsertThuChi){
@@ -325,6 +326,7 @@ public class ChiTieuActivity_BanPhu extends Activity implements OnGestureListene
 	public void onBackPressed() { // ham back
 		super.onBackPressed();
 		setResult(Activity.RESULT_CANCELED, intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
 		finish();
 	}
 
@@ -430,8 +432,7 @@ public class ChiTieuActivity_BanPhu extends Activity implements OnGestureListene
 		case R.id.btnBack_sochitieu: {
 			//			Intent intent = new Intent(this,GridView_main.class);
 			//			startActivity(intent);
-			setResult(Activity.RESULT_CANCELED, intent);
-			finish();
+			onBackPressed();
 			break;
 		}
 		case R.id.btnThem_sochitieu: {
@@ -918,6 +919,7 @@ class CallDialog extends Dialog implements OnClickListener {
 			intent2.putExtra(Variable.request, Variable.requestcode_UpdateSua);
 			intent2.putExtra(Variable.UPDATE_DATABASE + "id", id);
 			activity2.startActivityForResult(intent2, Variable.requestcode_UpdateSua);
+			activity2.overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			dismiss();
 			break;
 		}
@@ -965,6 +967,7 @@ class CallDialog extends Dialog implements OnClickListener {
 
 				Intent intent2 = new Intent(context,ChiTieuActivity_BanPhu.class);
 				context.startActivity(intent2);
+				
 				dismiss();
 
 			}

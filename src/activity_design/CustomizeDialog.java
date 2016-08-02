@@ -58,6 +58,7 @@ public class CustomizeDialog extends Dialog implements OnClickListener {
 			intent.putExtra(Variable.request, Variable.requestcode_InsertThuChi);
 			intent.putExtra(Variable.THU_or_CHI, "thu");
 			activity2.startActivityForResult(intent,Variable.requestcode_InsertThuChi);
+			activity2.overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			dismiss();
 			break;
 		}
@@ -66,6 +67,7 @@ public class CustomizeDialog extends Dialog implements OnClickListener {
 			intent.putExtra(Variable.request, Variable.requestcode_InsertThuChi);
 			intent.putExtra(Variable.THU_or_CHI, "chi");
 			activity2.startActivityForResult(intent,Variable.requestcode_InsertThuChi);
+			activity2.overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			dismiss();
 			break;
 		}
@@ -74,6 +76,7 @@ public class CustomizeDialog extends Dialog implements OnClickListener {
 			 intent.putExtra(Variable.request, Variable.requestcode_InsertVayNo);
 			 intent.putExtra(Variable.VAY_or_NO, "vay"); // vay
 			 activity2.startActivityForResult(intent,Variable.requestcode_InsertVayNo);
+			 activity2.overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			 dismiss();
 			break;
 		}
@@ -82,6 +85,7 @@ public class CustomizeDialog extends Dialog implements OnClickListener {
 			 intent.putExtra(Variable.request, Variable.requestcode_InsertVayNo);
 			 intent.putExtra(Variable.VAY_or_NO, "no"); // no
 			 activity2.startActivityForResult(intent,Variable.requestcode_InsertVayNo);
+			 activity2.overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			 dismiss();
 			break;
 		}

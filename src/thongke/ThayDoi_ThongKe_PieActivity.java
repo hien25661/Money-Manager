@@ -111,11 +111,7 @@ public class ThayDoi_ThongKe_PieActivity  extends Activity implements OnClickLis
 
 			@Override
 			public void onClick(View v) {
-				intent.putExtra(Variable.THU_or_CHI, thu_Or_chi);
-				intent.putExtra("tuNgay",editTu_Ngay.getText().toString());
-				intent.putExtra("toiNgay",editToi_Ngay.getText().toString());
-				setResult(Activity.RESULT_OK, intent);
-				finish();
+				onBackPressed();
 			}
 		});
 		//lay du lieu ngay
@@ -270,5 +266,16 @@ public class ThayDoi_ThongKe_PieActivity  extends Activity implements OnClickLis
 
 		return dialogbox;
 	}// close AlertDialog
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		intent.putExtra(Variable.THU_or_CHI, thu_Or_chi);
+		intent.putExtra("tuNgay",editTu_Ngay.getText().toString());
+		intent.putExtra("toiNgay",editToi_Ngay.getText().toString());
+		setResult(Activity.RESULT_OK, intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
+		finish();
+	}
 
 }

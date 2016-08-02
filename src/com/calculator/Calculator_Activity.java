@@ -28,9 +28,8 @@ public class Calculator_Activity extends Dialog implements OnClickListener {
 	String inDigit;
 	Simple_method simple = new Simple_method();
 	//Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9;
-	Button btnClear, btnDel, btnDiv, btnAdd, btnSub, btnMul, btnEqual, btnPoin,
-	btnDone;
-
+	Button btnClear, btnDel, btnDiv, btnAdd, btnSub, btnMul, btnEqual, btnPoin;
+	ImageButton btnDone;
 	public Calculator_Activity(Context context,String sotien) {
 		super(context,R.style.customDialogStype);
 		/** 'Window.FEATURE_NO_TITLE' - Used to hide the title */
@@ -66,7 +65,7 @@ public class Calculator_Activity extends Dialog implements OnClickListener {
 		((Button) findViewById(R.id.btnDel)).setOnClickListener(this);
 		
 		((Button) findViewById(R.id.btnPoin)).setOnClickListener(this);
-		((Button) findViewById(R.id.btnDone)).setOnClickListener(new OKListener());
+		((ImageButton) findViewById(R.id.btnDone)).setOnClickListener(new OKListener());
 	}
 
 	private void getdata(View v2){

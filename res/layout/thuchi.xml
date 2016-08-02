@@ -86,7 +86,8 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingRight="10dp"
-                    android:text="Trading name" />
+                    android:text="Trading name"
+                    android:textStyle="bold"  />
 
                 <AutoCompleteTextView
                     android:id="@+id/autoCpleditTenGiaoDich"
@@ -112,7 +113,8 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Amount of money" />
+                    android:text="Amount of money"
+                    android:textStyle="bold"  />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -154,7 +156,8 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingRight="10dp"
-                    android:text="@string/ngay" />
+                    android:text="@string/ngay" 
+                    android:textStyle="bold" />
                 <!-- ham de click show dialog -->
 
                 <EditText
@@ -183,7 +186,8 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:hint="@string/cothebotrong"
-                    android:text="Note" />
+                    android:text="Note"
+                    android:textStyle="bold"  />
 
                 <EditText
                     android:id="@+id/edtGhiChu"
@@ -211,7 +215,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/theloai" />
+                    android:text="@string/theloai" 
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:id="@+id/linearlayout_thuchi"

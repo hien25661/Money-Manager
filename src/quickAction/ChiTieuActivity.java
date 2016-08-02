@@ -276,6 +276,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 					intent2.putExtra(Variable.request, Variable.requestcode_UpdateSua);
 					intent2.putExtra(Variable.UPDATE_DATABASE + "id",item.getTc().getId());
 					ChiTieuActivity.this.startActivityForResult(intent2, Variable.requestcode_UpdateSua);
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 					//Toast.makeText(getApplicationContext(), "Add item selected on row " + mSelectedRow, Toast.LENGTH_SHORT).show();
 				}else{ // truong hop Xoa
 					AlertDialog diaBox = makeAndShowDialogBox(item.getTc());
@@ -295,6 +296,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 					intent2.putExtra(Variable.request, Variable.requestcode_UpdateSua);
 					intent2.putExtra(Variable.UPDATE_DATABASE + "id",item.getTc().getId());
 					ChiTieuActivity.this.startActivityForResult(intent2, Variable.requestcode_UpdateSua);
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 					//Toast.makeText(getApplicationContext(), "Add item selected on row " + mSelectedRow, Toast.LENGTH_SHORT).show();
 				} else if(actionId == ID_Xoa){ //Truong hop Da tra
 					AlertDialog diaBox = makeAndShowDialogBox(item.getTc());
@@ -319,7 +321,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 					Intent callIntent = new Intent(Intent.ACTION_CALL);
 					callIntent.setData(Uri.parse("tel:"+phone));
 					startActivity(callIntent);
-
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 
 				}
 				else{ //Truong hop qua khu
@@ -328,6 +330,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 					ChiTieuActivity.this.startActivityForResult(intent2, Variable.requestcode_MoRong);
 					/*	Toast.makeText(getApplicationContext(), actionItem.getTitle() + " item selected on row " 
 							+ mSelectedRow, Toast.LENGTH_SHORT).show();*/
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 				}
 			}
 		});
@@ -428,6 +431,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 	public void onBackPressed() { // ham back
 		super.onBackPressed();
 		setResult(Activity.RESULT_CANCELED, intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
 		finish();
 	}
 
@@ -692,6 +696,7 @@ public class ChiTieuActivity extends Activity implements OnTabChangeListener, On
 			public void onClick(View v) {
 				setResult(Activity.RESULT_CANCELED, intent);
 				finish();
+				overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
 			}
 		});
 		btnThem_sochitieu.setOnClickListener(new OnClickListener() {

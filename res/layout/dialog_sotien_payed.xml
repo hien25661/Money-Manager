@@ -34,13 +34,15 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/datra"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:textStyle="bold"  />
 
         <Button
             android:id="@+id/btnDong_dialogpayed"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/dong"  android:layout_weight="2"/>
+            android:text="@string/dong"  android:layout_weight="2"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

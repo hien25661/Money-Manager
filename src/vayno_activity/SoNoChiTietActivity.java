@@ -84,8 +84,7 @@ public class SoNoChiTietActivity extends Activity{
 
 			@Override
 			public void onClick(View v) {
-				setResult(Variable.requestcode_MoRong, intent);
-				finish();
+				onBackPressed();
 			}
 		});
 		listview_sono.setOnItemClickListener(new OnItemClickListener() {
@@ -173,6 +172,7 @@ public class SoNoChiTietActivity extends Activity{
 					intent2.putExtra(Variable.request, Variable.requestcode_UpdateSua);
 					intent2.putExtra(Variable.UPDATE_DATABASE + "id",item.getTc().getId());
 					SoNoChiTietActivity.this.startActivityForResult(intent2, Variable.requestcode_UpdateSua);
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 					//Toast.makeText(getApplicationContext(), "Add item selected on row " + mSelectedRow, Toast.LENGTH_SHORT).show();
 				} else if(actionId == ID_Xoa){ //Truong hop Da tra
 					AlertDialog diaBox = makeDialog_Delete(item.getTc());
@@ -193,6 +193,7 @@ public class SoNoChiTietActivity extends Activity{
 					Intent intent2= new Intent(SoNoChiTietActivity.this,QuaKhuDaTraActiviy.class);
 					intent2.putExtra("idQuaKhu", item.getTc().getId());
 					SoNoChiTietActivity.this.startActivityForResult(intent2, Variable.requestcode_MoRong);
+					overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 					/*	Toast.makeText(getApplicationContext(), actionItem.getTitle() + " item selected on row " 
 							+ mSelectedRow, Toast.LENGTH_SHORT).show();*/
 				}
@@ -336,6 +337,14 @@ public class SoNoChiTietActivity extends Activity{
 		})// setNegativeButton
 		.create();
 		return myDialogBox;
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		setResult(Variable.requestcode_MoRong, intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
+		finish();
 	}
 }//close SoNoChiTietActivity
 /*class Call_makeDialog extends Dialog implements OnClickListener {

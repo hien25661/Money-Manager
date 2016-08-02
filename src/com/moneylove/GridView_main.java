@@ -13,7 +13,6 @@ import map.GoogleMap;
 import object.QuanLyTienObject;
 import object.ThuChi;
 import quickAction.ChiTieuActivity;
-
 import com.calculator.Calculator_Activity;
 import com.doi_tien_te.Doi_Tien_Te;
 import com.google.android.gms.ads.AdListener;
@@ -26,7 +25,9 @@ import congcu_chia_tien.ChiaTienActivity;
 import export_cvs.ExportActivity;
 
 import sochitieu.ChiTieuActivity_BanPhu;
+import thongke.CalendarGridView;
 import thongke.ThayDoi_ThongKe_PieActivity;
+import thongke.ThongKe_ThangActivity;
 import util.CodeHeThong;
 import util.LayDate_Month_Yeah;
 import util.Simple_method;
@@ -219,16 +220,19 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		case 1: { // so chi tieu
 			Intent intent = new Intent(GridView_main.this, ChiTieuActivity.class);
 			startActivityForResult(intent, Variable.requestcode_SoChiTieu);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			break;
 		}
 		case 2: {
 			Intent intent = new Intent(GridView_main.this, SoNoActivity.class);
 			startActivityForResult(intent, Variable.requestcode_MoRong);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			break;
 		}
 		case 3: { // thong ke
 			Intent intent = new Intent(GridView_main.this, ThongKe_Activity.class);
 			startActivity(intent);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			break;
 		}
 		case 4: { // doi tien
@@ -241,6 +245,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 			} else {
 				Intent intent = new Intent(GridView_main.this, Doi_Tien_Te.class);
 				startActivityForResult(intent, Variable.requestcode_MoRong);
+				overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			}
 			break;
 		}
@@ -248,7 +253,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 			// xuat file cvs
 			Intent intent = new Intent(GridView_main.this, ExportActivity.class);
 			startActivity(intent);
-
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			break;
 		}
 		case 6: {
@@ -271,6 +276,7 @@ public class GridView_main extends Activity implements OnItemClickListener {
 		case 9: { // chia tien
 			Intent intent = new Intent(GridView_main.this, ChiaTienActivity.class);
 			startActivityForResult(intent, Variable.requestcode_MoRong);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			break;
 		}
 		}// close switch

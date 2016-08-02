@@ -100,8 +100,7 @@ public class QuaKhuDaTraActiviy extends Activity implements OnItemClickListener{
 
 			@Override
 			public void onClick(View v) {
-				setResult(Variable.requestcode_MoRong, intent);
-				finish();
+				onBackPressed();
 			}
 		});
 		listview_sono.setOnItemClickListener(this);
@@ -110,5 +109,13 @@ public class QuaKhuDaTraActiviy extends Activity implements OnItemClickListener{
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		setResult(Variable.requestcode_MoRong, intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
+		finish();
 	}
 }

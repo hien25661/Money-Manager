@@ -287,6 +287,7 @@ public class ChiTieuActivity extends Activity implements OnGestureListener,OnIte
 
 			Intent i = new Intent(this,ChiTieuActivity.class);
 			startActivity(i);
+			overridePendingTransition(R.anim.anim_slide_in_left,R.anim.anim_slide_out_left);
 			finish();
 		}else{ //Activity.RESULT_CANCELED
 			if(requestCode == Variable.requestcode_InsertThuChi){

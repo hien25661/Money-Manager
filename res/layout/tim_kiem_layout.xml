@@ -38,7 +38,8 @@
             android:id="@+id/btnTimKiem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search" />
+            android:text="Search" 
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView

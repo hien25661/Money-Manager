@@ -83,7 +83,8 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Borrower" />
+                    android:text="Borrower"
+                    android:textStyle="bold"  />
 
                 <AutoCompleteTextView
                     android:id="@+id/autoCplTenNguoiVayNo"
@@ -109,7 +110,8 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Amount of money" />
+                    android:text="Amount of money"
+                    android:textStyle="bold"  />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -151,7 +153,8 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:paddingRight="10dp"
-                    android:text="Note" />
+                    android:text="Note"
+                    android:textStyle="bold"  />
 
                 <EditText
                     android:id="@+id/edtGhiChu_vayno"
@@ -180,7 +183,8 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:hint="@string/cothebotrong"
-                    android:text="Date" />
+                    android:text="Date" 
+                    android:textStyle="bold" />
                 <!-- ham de click show dialog -->
 
                 <EditText
@@ -210,7 +214,8 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:text="Pay day" />
+                    android:text="Pay day" 
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/tvDateTra_vayno"

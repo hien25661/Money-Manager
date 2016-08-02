@@ -46,5 +46,12 @@ public class TheLoaiActivity extends ListActivity {
 		// thoat kho the loai
 		finish();
 	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
+		finish();
+	}
 
 }

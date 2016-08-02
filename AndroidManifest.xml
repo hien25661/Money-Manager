@@ -72,6 +72,8 @@
         </activity>
         <activity android:name="congcu_chia_tien.ChiaTienActivity" >
         </activity>
+         <activity android:name="thongke.ThongKe_ThangActivity" >
+        </activity>
         
         <!--
           Dinh nghia 1 activiy theo kieu Dialog

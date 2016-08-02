@@ -29,7 +29,7 @@
                 <Button
                     android:id="@+id/btnBack_sono"
                     android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="left|center"
                     android:layout_weight="1"
                     android:background="@color/docam"
@@ -45,7 +45,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="4"
                     android:gravity="center"
-                    android:text="Select one"
+                    android:text="Pay book"
                     android:textColor="@color/mauTrang_Chu"
                     android:textSize="@dimen/sizeFontChude"
                     android:textStyle="bold" />

@@ -91,25 +91,25 @@ public class EntryAdapter extends ArrayAdapter<Item> {
 
 					holder.tvSoTien.setBackgroundColor(context.getResources()
 							.getColor(R.color.mauDen_No));
-					holder.tvTenGiaoDich.setText("Nợ "
+					holder.tvTenGiaoDich.setText("Owe "
 							+ ei.getTc().getTen_giao_dich());
 				} else if (ei.getTc().getMa_id().equals("vay")) {
 					holder.ivIcon.setImageResource(Variable.ICON_Vay);
 					holder.tvSoTien.setBackgroundColor(context.getResources()
 							.getColor(R.color.mauCam_Vay));
-					holder.tvTenGiaoDich.setText("Cho vay "
+					holder.tvTenGiaoDich.setText("Loan "
 							+ ei.getTc().getTen_giao_dich());
 				}else if (ei.getTc().getMa_id().equals(Variable.DaTraVay)) {
 					holder.ivIcon.setImageResource(Variable.ICON_Vay);
 					holder.tvSoTien.setBackgroundColor(context.getResources()
 							.getColor(R.color.mauCam_Vay));
-					holder.tvTenGiaoDich.setText("Cho vay "
+					holder.tvTenGiaoDich.setText("Loan "
 							+ ei.getTc().getTen_giao_dich());
 					holder.tvTenGiaoDich.setPaintFlags( holder.tvTenGiaoDich.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 				}else if (ei.getTc().getMa_id().equals(Variable.DaTraNo)) {
 					holder.ivIcon.setImageResource(Variable.ICON_NO);
 					holder.tvSoTien.setBackgroundColor(context.getResources().getColor(R.color.mauDen_No));
-					holder.tvTenGiaoDich.setText("Nợ "
+					holder.tvTenGiaoDich.setText("Owe "
 							+ ei.getTc().getTen_giao_dich());
 					holder.tvTenGiaoDich.setPaintFlags( holder.tvTenGiaoDich.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 					

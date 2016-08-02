@@ -351,9 +351,7 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 			break;
 		}
 		case R.id.Back_vayno: {
-			new CodeHeThong().hideSoftKeyBoard(this);
-			setResult(Activity.RESULT_CANCELED,intent);
-			finish();
+			onBackPressed();
 			break;
 		}
 
@@ -474,5 +472,14 @@ public class VayNo_Activity extends Activity implements OnClickListener {
 	 * nguoi lai so tien database != sotienEdi 
 	 * thuc hien lay bien @Gobal - so tien ra truoc khi xulitinhtoan_VayNo
 	 */
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		new CodeHeThong().hideSoftKeyBoard(this);
+		setResult(Activity.RESULT_CANCELED,intent);
+		overridePendingTransition(R.anim.anim_slide_in_right,R.anim.anim_slide_out_right);
+		finish();
+	}
 }// VayNo_Activity
 

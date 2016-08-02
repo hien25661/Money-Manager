@@ -22,14 +22,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ChiaTienActivity extends Activity{
-	final int CUSTOM_DIALOG_CHIA_TIEN_OK=0;
+public class ChiaTienActivity extends Activity {
+	final int CUSTOM_DIALOG_CHIA_TIEN_OK = 0;
 	int tile = 0;
-	int songuoi=1;
+	int songuoi = 1;
 	Intent intent;
-	EditText edTyLeTip,edSoNguoi,edSoTien;
+	EditText edTyLeTip, edSoNguoi, edSoTien;
 	AdView adView;
 	InterstitialAd interstitial;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -52,9 +53,9 @@ public class ChiaTienActivity extends Activity{
 			public void onAdClosed() {
 			}
 		});
-		Button btnTinhTien = (Button)ChiaTienActivity.this.findViewById(R.id.btnChiaTien);
-		edSoTien = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
-		edSoNguoi = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoNguoi);
+		Button btnTinhTien = (Button) ChiaTienActivity.this.findViewById(R.id.btnChiaTien);
+		edSoTien = (EditText) ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
+		edSoNguoi = (EditText) ChiaTienActivity.this.findViewById(R.id.edSoNguoi);
 		Button tileCong = (Button) findViewById(R.id.tile_cong);
 		edTyLeTip = (EditText) findViewById(R.id.edTyLeTip);
 		Button tile_tru = (Button) findViewById(R.id.tile_tru);
@@ -63,15 +64,14 @@ public class ChiaTienActivity extends Activity{
 
 			@Override
 			public void onClick(View v) {
-				setResult(intent);
-				finish();
+				onBackPressed();
 
 			}
 		});
 		tileCong.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				tile+=5;
+				tile += 5;
 				edTyLeTip.setText(String.valueOf(tile));
 
 			}
@@ -80,8 +80,8 @@ public class ChiaTienActivity extends Activity{
 
 			@Override
 			public void onClick(View v) {
-				if(tile>=5){
-					tile-=5;
+				if (tile >= 5) {
+					tile -= 5;
 					edTyLeTip.setText(String.valueOf(tile));
 				}
 			}
@@ -92,8 +92,8 @@ public class ChiaTienActivity extends Activity{
 		songuoi_tru.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if(songuoi>=2){
-					songuoi-=1;
+				if (songuoi >= 2) {
+					songuoi -= 1;
 					edSoNguoi.setText(String.valueOf(songuoi));
 				}
 			}
@@ -102,11 +102,10 @@ public class ChiaTienActivity extends Activity{
 
 			@Override
 			public void onClick(View v) {
-				songuoi+=1;	
+				songuoi += 1;
 				edSoNguoi.setText(String.valueOf(songuoi));
 			}
 		});
-
 
 		btnTinhTien.setOnClickListener(new OnClickListener() {
 
@@ -114,8 +113,19 @@ public class ChiaTienActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if(edSoTien.getText().toString().length()==0||Integer.valueOf(edSoTien.getText().toString()) < 1)
-				{//chi kiem tra so nguoi va so tien ti le tiep bo qua
+				if (edSoTien.getText().toString().length() == 0 || Integer.valueOf(edSoTien.getText().toString()) < 1) {// chi
+																														// kiem
+																														// tra
+																														// so
+																														// nguoi
+																														// va
+																														// so
+																														// tien
+																														// ti
+																														// le
+																														// tiep
+																														// bo
+																														// qua
 					AlertDialog buider1 = new AlertDialog.Builder(ChiaTienActivity.this).create();
 					buider1.setTitle("An error occurred!");
 					buider1.setIcon(R.drawable.warning);
@@ -126,37 +136,35 @@ public class ChiaTienActivity extends Activity{
 						}
 					});
 					buider1.show();
+				} else if (edSoNguoi.getText().toString().length() == 0
+						|| Integer.valueOf(edSoNguoi.getText().toString()) < 1) {
+					AlertDialog buider2 = new AlertDialog.Builder(ChiaTienActivity.this).create();
+					buider2.setTitle("An error occurred!");
+					buider2.setIcon(R.drawable.warning);
+					buider2.setMessage("People must be greater than 0");
+					buider2.setButton("OK", new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+
+						}
+					});
+					buider2.show();
+				} else {
+					showDialog(CUSTOM_DIALOG_CHIA_TIEN_OK);
 				}
-				else
-					if(edSoNguoi.getText().toString().length()==0||Integer.valueOf(edSoNguoi.getText().toString()) < 1)
-					{
-						AlertDialog buider2 = new AlertDialog.Builder(ChiaTienActivity.this).create();
-						buider2.setTitle("An error occurred!");
-						buider2.setIcon(R.drawable.warning);
-						buider2.setMessage("People must be greater than 0");
-						buider2.setButton("OK", new DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								// TODO Auto-generated method stub
-
-							}
-						});
-						buider2.show();
-					}
-					else 
-					{
-						showDialog(CUSTOM_DIALOG_CHIA_TIEN_OK);
-					}
 
 			}
 		});
 	}
+
 	protected void setResult(Intent intent2) {
 		// TODO Auto-generated method stub
 
 	}
-	//Tạo Dialog khi thuc hien tinh toan ma không xay ra loi
+
+	// Tạo Dialog khi thuc hien tinh toan ma không xay ra loi
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		// TODO Auto-generated method stub.
@@ -166,28 +174,28 @@ public class ChiaTienActivity extends Activity{
 			dialog = new Dialog(this);
 			dialog.setContentView(R.layout.dialog_ketqua_chiatien);
 			dialog.setTitle("Result");
-			//			dialog.setIcon(R.drawable.money_pig);
-			final EditText edSoTien = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
-			final EditText edTyLeTip = (EditText)ChiaTienActivity.this.findViewById(R.id.edTyLeTip);
-			final EditText edSoNguoi = (EditText)ChiaTienActivity.this.findViewById(R.id.edSoNguoi);
-			TextView tvTienTip = (TextView)dialog.findViewById(R.id.tvSoTienTip);
-			TextView tvTongTien = (TextView)dialog.findViewById(R.id.tvTongTien);
-			TextView tvSoTienMoiNguoi = (TextView)dialog.findViewById(R.id.tvSoTienMoiNguoi);
+			// dialog.setIcon(R.drawable.money_pig);
+			final EditText edSoTien = (EditText) ChiaTienActivity.this.findViewById(R.id.edSoTienChia);
+			final EditText edTyLeTip = (EditText) ChiaTienActivity.this.findViewById(R.id.edTyLeTip);
+			final EditText edSoNguoi = (EditText) ChiaTienActivity.this.findViewById(R.id.edSoNguoi);
+			TextView tvTienTip = (TextView) dialog.findViewById(R.id.tvSoTienTip);
+			TextView tvTongTien = (TextView) dialog.findViewById(R.id.tvTongTien);
+			TextView tvSoTienMoiNguoi = (TextView) dialog.findViewById(R.id.tvSoTienMoiNguoi);
 			int soTien = Integer.valueOf(edSoTien.getText().toString().trim());
 			int tip = Integer.valueOf(edTyLeTip.getText().toString().trim());
 			int soNguoi = Integer.valueOf(edSoNguoi.getText().toString().trim());
 
 			Simple_method simple = new Simple_method();
-			//tinh toan
-			float tienTip = Float.valueOf((tip*soTien)/100);
+			// tinh toan
+			float tienTip = Float.valueOf((tip * soTien) / 100);
 			tvTienTip.setText(simple.LamTronSoFloat(tienTip));
-			float tongTien = soTien+tienTip;
+			float tongTien = soTien + tienTip;
 			tvTongTien.setText(simple.LamTronSoFloat(tongTien));
 
-			float tb = tongTien/soNguoi;
+			float tb = tongTien / soNguoi;
 
 			tvSoTienMoiNguoi.setText(simple.LamTronSoFloat(tb));
-			Button btnDong = (Button)dialog.findViewById(R.id.btnExitChiaTien);
+			Button btnDong = (Button) dialog.findViewById(R.id.btnExitChiaTien);
 			btnDong.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -201,4 +209,12 @@ public class ChiaTienActivity extends Activity{
 		return super.onCreateDialog(id);
 	}
 
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		setResult(intent);
+		overridePendingTransition(R.anim.anim_slide_in_right, R.anim.anim_slide_out_right);
+		finish();
+	}
 }

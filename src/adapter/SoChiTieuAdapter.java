@@ -95,7 +95,7 @@ public class SoChiTieuAdapter extends ArrayAdapter<ThuChi> {
 		} else {
 			holder.ivIcon.setImageResource(Variable.ICON_Vay);
 			holder.tvSoTien.setBackgroundColor(Color.parseColor("#996633"));
-			holder.tvTenGiaoDich.setText("Cho vay " + tc.getTen_giao_dich());
+			holder.tvTenGiaoDich.setText("Loan " + tc.getTen_giao_dich());
 		}
 
 		return rowView;
